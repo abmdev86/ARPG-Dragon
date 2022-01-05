@@ -41,6 +41,7 @@ namespace com.sluggagames.dragon.Combat
 
     private void AttackBehaviour()
     {
+      transform.LookAt(target.transform);
       if (timeSinceLastAttack > timeBetweenAttacks)
       {
         // Calls Hit() Animation Event
