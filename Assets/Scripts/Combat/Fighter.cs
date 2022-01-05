@@ -22,6 +22,7 @@ namespace com.sluggagames.dragon.Combat
       actionScheduler = GetComponent<ActionScheduler>();
       animator = GetComponent<Animator>();
     }
+
     private void Update()
     {
       timeSinceLastAttack += Time.deltaTime;
@@ -39,19 +40,7 @@ namespace com.sluggagames.dragon.Combat
 
     }
 
-    /// <summary>
-    /// Makes Player look at target and attack if timeSinceLastAttack is greater than timeBetweenAttacks.
-    /// </summary>
-    private void AttackBehaviour()
-    {
-      transform.LookAt(target.transform);
-      if (timeSinceLastAttack > timeBetweenAttacks)
-      {
-        // Calls Hit() Animation Event
-        animator.SetTrigger("attack");
-        timeSinceLastAttack = 0;
-      }
-    }
+
 
     /// <summary>
     /// Returns True if the target is within weaponRange.
@@ -61,6 +50,7 @@ namespace com.sluggagames.dragon.Combat
     {
       return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
     }
+
 
     /// <summary>
     /// Check if target Health component is not null and the target is alive.
@@ -83,14 +73,44 @@ namespace com.sluggagames.dragon.Combat
       actionScheduler.StartAction(this);
       target = combatTarget.GetComponent<Health>();
     }
+    /// <summary>
+    /// Makes Player look at target and attack if timeSinceLastAttack is greater than timeBetweenAttacks.
+    /// </summary>
+    private void AttackBehaviour()
+    {
+      transform.LookAt(target.transform);
+      if (timeSinceLastAttack > timeBetweenAttacks)
+      {
+        // Calls Hit() Animation Event
+        TriggerAttack();
+        timeSinceLastAttack = 0;
+      }
+    }
+
+    /// <summary>
+    /// Resets the stopAttack anim trigger and sets the attack anim trigger.
+    /// </summary>
+    private void TriggerAttack()
+    {
+      animator.ResetTrigger("stopAttack");
+      animator.SetTrigger("attack");
+    }
 
     /// <summary>
     ///  Cancels attack by setting the target as null
     /// </summary>
     public void Cancel()
     {
-      animator.SetTrigger("stopAttack");
+      StopAttack();
       target = null;
+    }
+    /// <summary>
+    /// Resets the attack anim trigger and sets the stopAttack anim trigger
+    /// </summary>
+    private void StopAttack()
+    {
+      animator.ResetTrigger("attack");
+      animator.SetTrigger("stopAttack");
     }
 
     void Hit()
