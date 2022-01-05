@@ -56,7 +56,7 @@ namespace com.sluggagames.dragon.Combat
     /// Check if target Health component is not null and the target is alive.
     /// </summary>
     /// <param name="combatTarget">The object you want to attack</param>
-    /// <returns></returns>
+    /// <returns>Return True if the Health Component on Target is available</returns>
     public bool CanAttack(CombatTarget combatTarget)
     {
       if (combatTarget == null) { return false; }
