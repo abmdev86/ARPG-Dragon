@@ -20,7 +20,7 @@ namespace com.sluggagames.dragon.Control
     {
       if (InteractWithCombat()) return;
       if (InteractWithMovement()) return;
-      print("Nothing to do");
+     // print("Nothing to do");
     }
 
     /// <summary>
@@ -32,7 +32,7 @@ namespace com.sluggagames.dragon.Control
       foreach (RaycastHit hit in hits)
       {
         CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-        if (fighter.CanAttack(target)) { continue; }
+        if (!fighter.CanAttack(target)) { continue; }
         if (Input.GetMouseButtonDown(0))
         {
           fighter.Attack(target);
