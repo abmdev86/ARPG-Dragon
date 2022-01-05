@@ -39,6 +39,9 @@ namespace com.sluggagames.dragon.Combat
 
     }
 
+    /// <summary>
+    /// Makes Player look at target and attack if timeSinceLastAttack is greater than timeBetweenAttacks.
+    /// </summary>
     private void AttackBehaviour()
     {
       transform.LookAt(target.transform);
@@ -50,11 +53,30 @@ namespace com.sluggagames.dragon.Combat
       }
     }
 
+    /// <summary>
+    /// Returns True if the target is within weaponRange.
+    /// </summary>
+    /// <returns> True if the target is within weaponRange</returns>
     private bool GetIsInRange()
     {
       return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
     }
 
+    /// <summary>
+    /// Check if target Health component is not null and the target is alive.
+    /// </summary>
+    /// <param name="combatTarget">The object you want to attack</param>
+    /// <returns></returns>
+    public bool CanAttack(CombatTarget combatTarget)
+    {
+      Health targetToCheck = combatTarget.GetComponent<Health>();
+      return targetToCheck != null && !targetToCheck.IsDead; //return true if target is Health component is not null and the target is alive.
+    }
+
+    /// <summary>
+    /// Calls actionScheduler to start combat and gets the combatTarget's Health
+    /// </summary>
+    /// <param name="combatTarget">The enemy to attack</param>
     public void Attack(CombatTarget combatTarget)
     {
       actionScheduler.StartAction(this);
