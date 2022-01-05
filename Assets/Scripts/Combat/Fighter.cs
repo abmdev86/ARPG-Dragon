@@ -69,6 +69,7 @@ namespace com.sluggagames.dragon.Combat
     /// <returns></returns>
     public bool CanAttack(CombatTarget combatTarget)
     {
+      if (combatTarget == null) { return false; }
       Health targetToCheck = combatTarget.GetComponent<Health>();
       return targetToCheck != null && !targetToCheck.IsDead; //return true if target is Health component is not null and the target is alive.
     }
