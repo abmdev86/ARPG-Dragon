@@ -7,7 +7,7 @@ namespace com.sluggagames.dragon.Combat
 {
   public class Fighter : MonoBehaviour, IAction
   {
-    Transform target;
+    Health target;
     Mover mover;
     ActionScheduler actionScheduler;
     Animator animator;
@@ -26,9 +26,10 @@ namespace com.sluggagames.dragon.Combat
     {
       timeSinceLastAttack += Time.deltaTime;
       if (target == null) return;
+      if (target.IsDead) return;
       if (!GetIsInRange())
       {
-        mover.MoveTo(target.position);
+        mover.MoveTo(target.transform.position);
       }
       else
       {
@@ -50,13 +51,13 @@ namespace com.sluggagames.dragon.Combat
 
     private bool GetIsInRange()
     {
-      return Vector3.Distance(transform.position, target.position) < weaponRange;
+      return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
     }
 
     public void Attack(CombatTarget combatTarget)
     {
       actionScheduler.StartAction(this);
-      target = combatTarget.transform;
+      target = combatTarget.GetComponent<Health>();
     }
 
     /// <summary>
@@ -64,13 +65,13 @@ namespace com.sluggagames.dragon.Combat
     /// </summary>
     public void Cancel()
     {
+      animator.SetTrigger("stopAttack");
       target = null;
     }
 
     void Hit()
     {
-      Health targetHealth = target.GetComponent<Health>();
-      targetHealth.TakeDamage(weaponDamage);
+      target.TakeDamage(weaponDamage);
     }
   }
 }

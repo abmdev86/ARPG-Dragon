@@ -7,6 +7,13 @@ namespace com.sluggagames.dragon.Combat
     [SerializeField] float healthPoints = 100f;
     Animator animator;
     bool isDead = false;
+    public bool IsDead
+    {
+      get
+      {
+        return isDead;
+      }
+    }
 
     private void Awake()
     {
