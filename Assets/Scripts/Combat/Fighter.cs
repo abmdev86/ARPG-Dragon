@@ -115,6 +115,7 @@ namespace com.sluggagames.dragon.Combat
 
     void Hit()
     {
+      if (target == null) { return; }
       target.TakeDamage(weaponDamage);
     }
   }
