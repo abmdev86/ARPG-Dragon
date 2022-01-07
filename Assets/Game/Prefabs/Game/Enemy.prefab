@@ -12,6 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fee639c8d6a0fa4ab0c9f39dfb69213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1640997739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087271934964151118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0aa073fa3d4ba4bb15111b69cb1cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
 --- !u!1001 &2969597288860182511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19,6 +32,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1856794093, guid: 4bf0b47b69940cf4086faeffff543796, type: 3}
+      propertyPath: m_Speed
+      value: 3.74
+      objectReference: {fileID: 0}
     - target: {fileID: 1856794094, guid: 4bf0b47b69940cf4086faeffff543796, type: 3}
       propertyPath: m_Controller
       value: 
@@ -45,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5752038887102467647, guid: 4bf0b47b69940cf4086faeffff543796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.62
       objectReference: {fileID: 0}
     - target: {fileID: 5752038887102467647, guid: 4bf0b47b69940cf4086faeffff543796, type: 3}
       propertyPath: m_LocalPosition.y
