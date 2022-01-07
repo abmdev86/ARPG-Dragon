@@ -17,12 +17,15 @@ namespace com.sluggagames.dragon.Control
     Mover mover;
     Vector3 gaurdStartPosition;
     float timeSinceLastSawPlayer = Mathf.Infinity;
+    float timeSinceArrivedAtWaypoint = Mathf.Infinity;
+
     int currentWaypointIndex = 0;
     [SerializeField] float suspicionTime = 3;
     [Range(1, 20)]
     [SerializeField] float chaseDistance = 5f;
     [SerializeField] PatrolPath patrolPath;
     [SerializeField] float waypointTolerance = 1f;
+    [SerializeField] float wayPointDwellTime = 3f;
 
 
     private void Start()
@@ -38,7 +41,6 @@ namespace com.sluggagames.dragon.Control
       if (health.IsDead) return;
       if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
       {
-        timeSinceLastSawPlayer = 0;
         AttackBehaviour();
       }
       else if (timeSinceLastSawPlayer < suspicionTime)
@@ -50,24 +52,35 @@ namespace com.sluggagames.dragon.Control
       {
         PatrolBehaviour();
       }
-      timeSinceLastSawPlayer += Time.deltaTime;
+      UpdateTimers();
 
+    }
+
+    private void UpdateTimers()
+    {
+      timeSinceLastSawPlayer += Time.deltaTime;
+      timeSinceArrivedAtWaypoint += Time.deltaTime;
     }
 
     private void PatrolBehaviour()
     {
-      GetComponent<NavMeshAgent>().speed = 2.75f;
+
       Vector3 nextPosition = gaurdStartPosition;
       if (patrolPath != null)
       {
         if (AtWaypoint())
         {
+          timeSinceArrivedAtWaypoint = 0;
           CycleWaypoint();
         }
         nextPosition = GetCurrentWaypoint();
 
       }
-      mover.StartMoveAction(nextPosition);
+      if (timeSinceArrivedAtWaypoint > wayPointDwellTime)
+      {
+        GetComponent<NavMeshAgent>().speed = 2.75f;
+        mover.StartMoveAction(nextPosition);
+      }
     }
 
     private Vector3 GetCurrentWaypoint()
@@ -89,11 +102,14 @@ namespace com.sluggagames.dragon.Control
     private void SusBehaviour()
     {
       GetComponent<ActionScheduler>().CancelCurrentAction();
-      GetComponent<NavMeshAgent>().speed = 3.75f;
+
     }
 
     private void AttackBehaviour()
     {
+      timeSinceLastSawPlayer = 0;
+
+      GetComponent<NavMeshAgent>().speed = 3.75f;
       fighter.Attack(player);
     }
 
