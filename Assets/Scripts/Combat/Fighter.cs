@@ -57,7 +57,7 @@ namespace com.sluggagames.dragon.Combat
     /// </summary>
     /// <param name="combatTarget">The object you want to attack</param>
     /// <returns>Return True if the Health Component on Target is available</returns>
-    public bool CanAttack(CombatTarget combatTarget)
+    public bool CanAttack(GameObject combatTarget)
     {
       if (combatTarget == null) { return false; }
       Health targetToCheck = combatTarget.GetComponent<Health>();
@@ -68,7 +68,7 @@ namespace com.sluggagames.dragon.Combat
     /// Calls actionScheduler to start combat and gets the combatTarget's Health
     /// </summary>
     /// <param name="combatTarget">The enemy to attack</param>
-    public void Attack(CombatTarget combatTarget)
+    public void Attack(GameObject combatTarget)
     {
       actionScheduler.StartAction(this);
       target = combatTarget.GetComponent<Health>();
