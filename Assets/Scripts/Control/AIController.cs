@@ -9,6 +9,7 @@ namespace com.sluggagames.dragon.Control
   [RequireComponent(typeof(NavMeshAgent))]
   public class AIController : MonoBehaviour
   {
+    [Range(1,20)]
     [SerializeField] float chaseDistance = 5f;
     GameObject player;
     Fighter fighter;
@@ -40,6 +41,12 @@ namespace com.sluggagames.dragon.Control
     {
       float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
       return distanceToPlayer < chaseDistance;
+    }
+    private void OnDrawGizmos() {
+      Gizmos.color = Color.blue;
+      Gizmos.DrawWireSphere(transform.position, chaseDistance);
+
+
     }
   }
 }
