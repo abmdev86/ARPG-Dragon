@@ -14,7 +14,7 @@ namespace com.sluggagames.dragon.Combat
     [SerializeField] float weaponRange = 2f;
     [SerializeField] float timeBetweenAttacks = 2f;
     [SerializeField] float weaponDamage = 5f;
-    float timeSinceLastAttack = 0;
+    float timeSinceLastAttack = Mathf.Infinity;
 
     private void Awake()
     {
@@ -56,8 +56,8 @@ namespace com.sluggagames.dragon.Combat
     /// Check if target Health component is not null and the target is alive.
     /// </summary>
     /// <param name="combatTarget">The object you want to attack</param>
-    /// <returns></returns>
-    public bool CanAttack(CombatTarget combatTarget)
+    /// <returns>Return True if the Health Component on Target is available</returns>
+    public bool CanAttack(GameObject combatTarget)
     {
       if (combatTarget == null) { return false; }
       Health targetToCheck = combatTarget.GetComponent<Health>();
@@ -68,7 +68,7 @@ namespace com.sluggagames.dragon.Combat
     /// Calls actionScheduler to start combat and gets the combatTarget's Health
     /// </summary>
     /// <param name="combatTarget">The enemy to attack</param>
-    public void Attack(CombatTarget combatTarget)
+    public void Attack(GameObject combatTarget)
     {
       actionScheduler.StartAction(this);
       target = combatTarget.GetComponent<Health>();

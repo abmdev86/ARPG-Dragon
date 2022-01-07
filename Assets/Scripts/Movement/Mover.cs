@@ -10,18 +10,20 @@ namespace com.sluggagames.dragon.Movement
     NavMeshAgent navMeshAgent;
     Animator animator;
     ActionScheduler actionScheduler;
+    Health health;
 
     private void Awake()
     {
       navMeshAgent = GetComponent<NavMeshAgent>();
       animator = GetComponent<Animator>();
       actionScheduler = GetComponent<ActionScheduler>();
+      health = GetComponent<Health>();
     }
 
 
     void Update()
     {
-
+      navMeshAgent.enabled = !health.IsDead;
       UpdateAnimator();
     }
     public void StartMoveAction(Vector3 destination)
@@ -63,12 +65,12 @@ namespace com.sluggagames.dragon.Movement
     /// <summary>
     /// Animation Event
     /// </summary>
-     void FootR()
+    void FootR()
     {
       // play sfx here
       // print("STOMP!");
     }
-     void FootL()
+    void FootL()
     {
 
     }

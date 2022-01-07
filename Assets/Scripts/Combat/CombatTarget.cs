@@ -1,4 +1,5 @@
 
+using com.sluggagames.dragon.Core;
 using UnityEngine;
 
 namespace com.sluggagames.dragon.Combat

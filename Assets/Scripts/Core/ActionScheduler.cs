@@ -14,7 +14,11 @@ namespace com.sluggagames.dragon.Core
         print("Cancelling " + currentAction);
       }
       currentAction = action;
+    }
 
+    public void CancelCurrentAction()
+    {
+      StartAction(null);
     }
   }
 }

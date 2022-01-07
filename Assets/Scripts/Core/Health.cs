@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace com.sluggagames.dragon.Combat
+namespace com.sluggagames.dragon.Core
 {
   public class Health : MonoBehaviour
   {
@@ -35,6 +35,7 @@ namespace com.sluggagames.dragon.Combat
       if (isDead) return;
       animator.SetTrigger("die");
       isDead = true;
+      GetComponent<ActionScheduler>().CancelCurrentAction();
     }
   }
 }
