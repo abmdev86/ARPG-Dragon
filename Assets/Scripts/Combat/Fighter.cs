@@ -14,7 +14,7 @@ namespace com.sluggagames.dragon.Combat
     [SerializeField] float weaponRange = 2f;
     [SerializeField] float timeBetweenAttacks = 2f;
     [SerializeField] float weaponDamage = 5f;
-    float timeSinceLastAttack = 0;
+    float timeSinceLastAttack = Mathf.Infinity;
 
     private void Awake()
     {

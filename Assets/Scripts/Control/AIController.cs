@@ -1,5 +1,6 @@
 
 using com.sluggagames.dragon.Combat;
+using com.sluggagames.dragon.Core;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,17 +12,17 @@ namespace com.sluggagames.dragon.Control
     [SerializeField] float chaseDistance = 5f;
     GameObject player;
     Fighter fighter;
-
+    Health health;
 
     private void Start()
     {
       fighter = GetComponent<Fighter>();
       player = GameObject.FindGameObjectWithTag("Player");
-
-
+      health = GetComponent<Health>();
     }
     private void Update()
     {
+      if (health.IsDead) return;
       if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
       {
 
@@ -37,8 +38,8 @@ namespace com.sluggagames.dragon.Control
 
     private bool InAttackRangeOfPlayer()
     {
-      float v = Vector3.Distance(transform.position, player.transform.position);
-      return v < chaseDistance;
+      float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+      return distanceToPlayer < chaseDistance;
     }
   }
 }
