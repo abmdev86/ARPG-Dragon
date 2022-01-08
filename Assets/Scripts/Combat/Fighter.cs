@@ -15,6 +15,8 @@ namespace com.sluggagames.dragon.Combat
     [SerializeField] float timeBetweenAttacks = 2f;
     [SerializeField] float weaponDamage = 5f;
     float timeSinceLastAttack = Mathf.Infinity;
+    [SerializeField]
+    AudioClip swingFX;
 
     private void Awake()
     {
@@ -94,6 +96,7 @@ namespace com.sluggagames.dragon.Combat
     {
       animator.ResetTrigger("stopAttack");
       animator.SetTrigger("attack");
+      GetComponent<AudioSource>().PlayOneShot(swingFX);
     }
 
     /// <summary>
