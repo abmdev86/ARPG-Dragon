@@ -11,6 +11,9 @@ namespace com.sluggagames.dragon.Movement
     Animator animator;
     ActionScheduler actionScheduler;
     Health health;
+    [SerializeField]
+    AudioClip footstepFX;
+    AudioSource audioSource;
 
     private void Awake()
     {
@@ -18,9 +21,13 @@ namespace com.sluggagames.dragon.Movement
       animator = GetComponent<Animator>();
       actionScheduler = GetComponent<ActionScheduler>();
       health = GetComponent<Health>();
+      audioSource = GetComponent<AudioSource>();
     }
 
-
+    private void Start()
+    {
+      audioSource.volume = .1f;
+    }
     void Update()
     {
       navMeshAgent.enabled = !health.IsDead;
@@ -67,11 +74,13 @@ namespace com.sluggagames.dragon.Movement
     /// </summary>
     void FootR()
     {
-      // play sfx here
-      // print("STOMP!");
+
+      audioSource.PlayOneShot(footstepFX);
+
     }
     void FootL()
     {
+      audioSource.PlayOneShot(footstepFX);
 
     }
   }
