@@ -106,6 +106,7 @@ namespace com.sluggagames.dragon.Combat
     {
       StopAttack();
       target = null;
+      mover.Cancel();
     }
     /// <summary>
     /// Resets the attack anim trigger and sets the stopAttack anim trigger
