@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Playables;
 
-namespace com.sluggagames.dragon
+namespace com.sluggagames.dragon.Cinematics
 {
   public class CinematicTrigger : MonoBehaviour
   {
