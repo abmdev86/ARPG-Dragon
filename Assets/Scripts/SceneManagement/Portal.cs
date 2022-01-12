@@ -8,10 +8,15 @@ using UnityEngine.SceneManagement;
 
 namespace com.sluggagames.dragon.SceneManagement
 {
+  enum DestinationIdentifier
+  {
+    A, B, C, D
+  }
   public class Portal : MonoBehaviour
   {
     [SerializeField] int sceneToLoad = -1;
     [SerializeField] Transform spawnPoint;
+    [SerializeField] DestinationIdentifier destinationIdentifier;
     private void OnTriggerEnter(Collider other)
     {
       if (other.tag == "Player")
@@ -22,6 +27,10 @@ namespace com.sluggagames.dragon.SceneManagement
 
     IEnumerator Transition()
     {
+      if (sceneToLoad < 0)
+      {
+        yield break;
+      }
       DontDestroyOnLoad(gameObject);
       yield return SceneManager.LoadSceneAsync(sceneToLoad);
 
@@ -45,6 +54,7 @@ namespace com.sluggagames.dragon.SceneManagement
       foreach (Portal portal in FindObjectsOfType<Portal>())
       {
         if (portal == this) continue;
+        if (portal.destinationIdentifier != this.destinationIdentifier) continue;
         return portal;
       }
       return null; // no portal found!
