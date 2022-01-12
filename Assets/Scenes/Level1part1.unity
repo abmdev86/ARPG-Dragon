@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 705507994}
+  m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0.46621937, g: 0.6829968, b: 0.9086671, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 160864455}
   - component: {fileID: 159809711}
   - component: {fileID: 64093159299080521}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Rock_Flat_Platform_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 222867836}
   - component: {fileID: 223917258}
   - component: {fileID: 64094380813223986}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Wall_Fireplace_Alcove_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 236270116}
   - component: {fileID: 235132288}
   - component: {fileID: 64130021824518464}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Cave_Background_Corner_02_DoubleSided
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 242577050}
   - component: {fileID: 241404222}
   - component: {fileID: 64130021822399998}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Cave_Background_Corner_02_DoubleSided (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 64353289653865488}
   - component: {fileID: 64686993081376358}
   - component: {fileID: 64471583380290202}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Rubble_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,7 +1124,7 @@ GameObject:
   - component: {fileID: 418383136}
   - component: {fileID: 417836714}
   - component: {fileID: 64156871685249400}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_RockPile_Square_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 416598873}
   - component: {fileID: 416598872}
   - component: {fileID: 416598871}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Brick_Rubble_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 444842407}
   - component: {fileID: 445962355}
   - component: {fileID: 64184643312392837}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Rune_Pillar_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1485,7 +1485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 491470547}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Boulder1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1585,7 +1585,7 @@ GameObject:
   - component: {fileID: 64353289938412305}
   - component: {fileID: 64686992326029671}
   - component: {fileID: 64471584200938907}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Rubble_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1604,7 +1604,7 @@ GameObject:
   - component: {fileID: 588945069}
   - component: {fileID: 588945068}
   - component: {fileID: 588945067}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Brick_Rubble_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1860,7 +1860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629944313}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Boulder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2059,11 +2059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!108 &705507994 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 8111101668491776954, guid: 7cbd3ebd1035faa4cb604cb60cea6c46, type: 3}
-  m_PrefabInstance: {fileID: 8111101668055769376}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &738234605
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2473,6 +2468,99 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
+--- !u!1 &932880093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 932880095}
+  - component: {fileID: 932880094}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &932880094
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932880093}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &932880095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932880093}
+  m_LocalRotation: {x: -0.4007425, y: -0.38333726, z: 0.1895951, w: -0.8102541}
+  m_LocalPosition: {x: -37.676147, y: 59.526745, z: -29.946999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &946474013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,7 +2573,7 @@ GameObject:
   - component: {fileID: 946474017}
   - component: {fileID: 946474016}
   - component: {fileID: 946474015}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Brick_Rubble_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2949,9 +3037,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy 3 (Tough)
       objectReference: {fileID: 0}
+    - target: {fileID: 2969597289369504287, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
+      propertyPath: weaponRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969597289369504287, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
+      propertyPath: weaponDamage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969597289369504287, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7414466383028726224, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414466383028726224, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414466383028726224, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414466383028726224, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7414466383028726224, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2993,6 +3105,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8980863435399555995, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
+      propertyPath: healthPoints
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f8000c68cf30240ae987ca367d556f, type: 3}
 --- !u!114 &1225014223 stripped
@@ -3018,7 +3134,7 @@ GameObject:
   - component: {fileID: 1227393496}
   - component: {fileID: 1227393495}
   - component: {fileID: 1227393494}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Brick_Rubble_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3198,7 +3314,7 @@ GameObject:
   - component: {fileID: 1307121598}
   - component: {fileID: 1307121597}
   - component: {fileID: 1307121596}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Brick_Rubble_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3408,7 +3524,7 @@ GameObject:
   - component: {fileID: 1308706772}
   - component: {fileID: 1309761468}
   - component: {fileID: 64093160482684506}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Rock_Flat_Platform_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3438,7 +3554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1325425246}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RockSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3556,7 +3672,7 @@ GameObject:
   - component: {fileID: 1325767343}
   - component: {fileID: 1326793087}
   - component: {fileID: 65724634634623383}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Brick_Rubble_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3638,7 +3754,7 @@ GameObject:
   - component: {fileID: 1360833322}
   - component: {fileID: 1359721214}
   - component: {fileID: 64184642415423496}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Rune_Pillar_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3654,7 +3770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1370538666}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Boulder1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3768,7 +3884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1403366855}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Boulder1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3866,7 +3982,7 @@ GameObject:
   - component: {fileID: 1434845937}
   - component: {fileID: 1435949345}
   - component: {fileID: 65724634273677769}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Brick_Rubble_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4344,7 +4460,7 @@ GameObject:
   - component: {fileID: 1790175709}
   - component: {fileID: 1789009629}
   - component: {fileID: 64420067538404173}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_RockPile_Square_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5152,7 +5268,7 @@ GameObject:
   - component: {fileID: 2051776284}
   - component: {fileID: 2052863126}
   - component: {fileID: 64156872177386308}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_RockPile_Square_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5182,7 +5298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2097153057}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Props
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5217,7 +5333,7 @@ GameObject:
   - component: {fileID: 2108020572}
   - component: {fileID: 2108020571}
   - component: {fileID: 2108020570}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Env_Brick_Rubble_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5813,7 +5929,7 @@ GameObject:
   - component: {fileID: 416485894433450146}
   - component: {fileID: 416485894434595824}
   - component: {fileID: 369628255744679898}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SavePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5923,7 +6039,7 @@ GameObject:
   - component: {fileID: 901643388668157131}
   - component: {fileID: 901643388669202753}
   - component: {fileID: 893641763011261895}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Prop_Goblin_Rotisserie_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6040,7 +6156,7 @@ GameObject:
   - component: {fileID: 1186275532514961275}
   - component: {fileID: 1186275532515981749}
   - component: {fileID: 1194207483770753447}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Prop_Goblin_Spikes_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6083,12 +6199,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 2097153057}
     m_Modifications:
     - target: {fileID: 1006950034922499328, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006950034922499328, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1274635285840699567, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274635285840699567, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274635287182952568, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1274635287182952568, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6139,12 +6267,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2081336687220826523, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081336687220826523, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2258843288545833537, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2258843288545833537, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441727151878681265, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2441727151878681265, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6153,6 +6293,10 @@ PrefabInstance:
     - target: {fileID: 2692235903093934795, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
       propertyPath: m_Name
       value: Crate01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692235903093934795, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2692235903093934795, guid: 66f8d91916019d341977b6b4e88c23c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6203,6 +6347,30 @@ PrefabInstance:
     - target: {fileID: 688143898768903261, guid: cae8fbf78f8d4a4448ff6bbe9bddd835, type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 688143898768903261, guid: cae8fbf78f8d4a4448ff6bbe9bddd835, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734937139569018449, guid: cae8fbf78f8d4a4448ff6bbe9bddd835, type: 3}
+      propertyPath: sceneToLoad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657597085408220784, guid: cae8fbf78f8d4a4448ff6bbe9bddd835, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657597085408220784, guid: cae8fbf78f8d4a4448ff6bbe9bddd835, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657597085408220784, guid: cae8fbf78f8d4a4448ff6bbe9bddd835, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657597085408220784, guid: cae8fbf78f8d4a4448ff6bbe9bddd835, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6640236573145759602, guid: cae8fbf78f8d4a4448ff6bbe9bddd835, type: 3}
       propertyPath: m_RootOrder
@@ -6586,7 +6754,7 @@ GameObject:
   - component: {fileID: 4084324771700990012}
   - component: {fileID: 4084324771700013218}
   - component: {fileID: 4056611365843549300}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Prop_Plank_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6696,7 +6864,7 @@ GameObject:
   - component: {fileID: 4174611463653349300}
   - component: {fileID: 4174611463652302388}
   - component: {fileID: 4110640269560072504}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Prop_Bricks_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7041,7 +7209,7 @@ GameObject:
   - component: {fileID: 6037417327403209801}
   - component: {fileID: 6037417327404748623}
   - component: {fileID: 5993703200370727531}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Prop_Goblin_Drum_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7308,7 +7476,7 @@ GameObject:
   - component: {fileID: 8409044308076695506}
   - component: {fileID: 8409044308077796010}
   - component: {fileID: 8382562316015112238}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Prop_Skeleton_Slave_Shackles_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
