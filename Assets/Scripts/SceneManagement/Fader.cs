@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.sluggagames.dragon.SceneManagement
@@ -10,7 +9,7 @@ namespace com.sluggagames.dragon.SceneManagement
     private void Start()
     {
       canvasGroup = GetComponent<CanvasGroup>();
-      StartCoroutine(FadeOutThenIn());
+
     }
     IEnumerator FadeOutThenIn()
     {
@@ -31,6 +30,7 @@ namespace com.sluggagames.dragon.SceneManagement
     {
       while (canvasGroup.alpha > 0)
       {
+
         canvasGroup.alpha -= Time.deltaTime / time;
         yield return null;
       }
