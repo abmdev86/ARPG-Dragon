@@ -9,6 +9,8 @@ namespace com.sluggagames.dragon.Control
   {
     Mover mover;
     Fighter fighter;
+    [Range(0, 1)]
+    [SerializeField] float playerSpeedFraction = 1f;
 
     private void Awake()
     {
@@ -56,7 +58,7 @@ namespace com.sluggagames.dragon.Control
         if (Input.GetMouseButton(0))
         {
 
-          mover.StartMoveAction(hit.point);
+          mover.StartMoveAction(hit.point, playerSpeedFraction);
         }
         return true;
       }

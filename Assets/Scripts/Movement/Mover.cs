@@ -14,6 +14,8 @@ namespace com.sluggagames.dragon.Movement
     [SerializeField]
     AudioClip footstepFX;
     AudioSource audioSource;
+    [SerializeField]
+    float maxSpeed = 4.5f;
 
     private void Awake()
     {
@@ -33,11 +35,11 @@ namespace com.sluggagames.dragon.Movement
       navMeshAgent.enabled = !health.IsDead;
       UpdateAnimator();
     }
-    public void StartMoveAction(Vector3 destination)
+    public void StartMoveAction(Vector3 destination, float speedFraction)
     {
       actionScheduler.StartAction(this);
 
-      MoveTo(destination);
+      MoveTo(destination, speedFraction);
     }
 
     /// <summary>
@@ -63,9 +65,10 @@ namespace com.sluggagames.dragon.Movement
     /// Moves the NavMeshAgent to the desired destination
     /// </summary>
     /// <param name="destination"> Vector3 destination for the NavMeshAgent to travel towards</param>
-    public void MoveTo(Vector3 destination)
+    public void MoveTo(Vector3 destination, float speedFraction)
     {
       navMeshAgent.destination = destination;
+      navMeshAgent.speed = maxSpeed * Mathf.Clamp01(speedFraction);
       navMeshAgent.isStopped = false;
     }
 

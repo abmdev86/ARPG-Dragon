@@ -26,6 +26,8 @@ namespace com.sluggagames.dragon.Control
     [SerializeField] PatrolPath patrolPath;
     [SerializeField] float waypointTolerance = 1f;
     [SerializeField] float wayPointDwellTime = 3f;
+    [Range(0,1)]
+    [SerializeField] float patrolSpeedFraction = 0.2f;
 
 
     private void Start()
@@ -78,8 +80,8 @@ namespace com.sluggagames.dragon.Control
       }
       if (timeSinceArrivedAtWaypoint > wayPointDwellTime)
       {
-        GetComponent<NavMeshAgent>().speed = 2.75f;
-        mover.StartMoveAction(nextPosition);
+
+        mover.StartMoveAction(nextPosition, patrolSpeedFraction);
       }
     }
 
