@@ -36,7 +36,7 @@ namespace com.sluggagames.dragon.SceneManagement
       {
         yield break;
       }
-      //DontDestroyOnLoad(this.gameObject);
+      DontDestroyOnLoad(this.gameObject);
       Fader fader = FindObjectOfType<Fader>();
       yield return fader.FadeOut(fadeOutTime);
 
@@ -46,8 +46,11 @@ namespace com.sluggagames.dragon.SceneManagement
       UpdatePlayer(otherPortal);
 
       yield return new WaitForSeconds(fadeWaitTime);
+      Destroy(gameObject);
       yield return fader.FadeIn(fadeInTime);
-      Destroy(this.gameObject);
+
+
+
     }
     /// <summary>
     /// Sets the player gameobject to the spawnPoint location
