@@ -4691,6 +4691,7 @@ GameObject:
   - component: {fileID: 1856794096}
   - component: {fileID: 1856794097}
   - component: {fileID: 6166640333690080372}
+  - component: {fileID: 7802787722481748487}
   m_Layer: 0
   m_Name: Character_base
   m_TagString: Untagged
@@ -4739,6 +4740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308ed271baceea843a608f144c89b392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footstepFX: {fileID: 0}
+  maxSpeed: 4.5
 --- !u!195 &1856794093
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4795,6 +4798,7 @@ MonoBehaviour:
   weaponRange: 2
   timeBetweenAttacks: 2
   weaponDamage: 5
+  swingFX: {fileID: 0}
 --- !u!114 &1856794097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4819,4 +4823,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa916a8b16fdaa4085f158380a64ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  healthPoints: 100
+--- !u!114 &7802787722481748487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873478052714861729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
