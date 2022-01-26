@@ -46,7 +46,12 @@ namespace com.sluggagames.dragon.Core
 
         public void RestoreState(object state)
         {
+            
             healthPoints = (float)state;
+            if(healthPoints == 0)
+            {
+                Die();
+            }
 
         }
     }

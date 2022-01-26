@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
-
+using RPG.Saving;
 
 namespace com.sluggagames.dragon.SceneManagement
 {
@@ -21,6 +21,8 @@ namespace com.sluggagames.dragon.SceneManagement
     [SerializeField] float fadeInTime = 2f;
     [SerializeField] float fadeWaitTime = 0.5f;
 
+    SavingWrapper savingWrapper;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,20 +36,31 @@ namespace com.sluggagames.dragon.SceneManagement
     {
       if (sceneToLoad < 0)
       {
+        Debug.LogError("Scene To load is not set", this);
         yield break;
       }
-      DontDestroyOnLoad(this.gameObject);
+      DontDestroyOnLoad(gameObject);
       Fader fader = FindObjectOfType<Fader>();
+
       yield return fader.FadeOut(fadeOutTime);
+
+      //save current level
+      savingWrapper = FindObjectOfType<SavingWrapper>();
+      savingWrapper.Save();
+
 
       yield return SceneManager.LoadSceneAsync(sceneToLoad);
 
+      // load level data
+      savingWrapper.Load();
+
       Portal otherPortal = GetOtherPortal();
       UpdatePlayer(otherPortal);
+      Destroy(gameObject);
 
       yield return new WaitForSeconds(fadeWaitTime);
-      Destroy(gameObject);
       yield return fader.FadeIn(fadeInTime);
+
 
 
 
@@ -60,8 +73,10 @@ namespace com.sluggagames.dragon.SceneManagement
     {
       GameObject player = GameObject.FindGameObjectWithTag("Player");
       player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
+      player.GetComponent<NavMeshAgent>().enabled = false;
       player.transform.position = otherPortal.spawnPoint.position;
       player.transform.rotation = otherPortal.spawnPoint.rotation;
+      player.GetComponent<NavMeshAgent>().enabled = true;
 
     }
 
@@ -75,5 +90,6 @@ namespace com.sluggagames.dragon.SceneManagement
       }
       return null; // no portal found!
     }
+
   }
 }
