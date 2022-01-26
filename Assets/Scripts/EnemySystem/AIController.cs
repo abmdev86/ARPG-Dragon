@@ -111,7 +111,7 @@ namespace com.sluggagames.dragon.EnemySystem
     {
       timeSinceLastSawPlayer = 0;
 
-      GetComponent<NavMeshAgent>().speed = 3.75f;
+      GetComponent<NavMeshAgent>().speed = 2.75f;
       fighter.Attack(player);
     }
 

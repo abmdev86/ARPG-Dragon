@@ -1,8 +1,9 @@
 using UnityEngine;
+using RPG.Saving;
 
 namespace com.sluggagames.dragon.Core
 {
-  public class Health : MonoBehaviour
+  public class Health : MonoBehaviour, ISaveable
   {
     [SerializeField] float healthPoints = 100f;
     Animator animator;
@@ -37,5 +38,16 @@ namespace com.sluggagames.dragon.Core
       isDead = true;
       GetComponent<ActionScheduler>().CancelCurrentAction();
     }
-  }
+
+        public object CaptureState()
+        {
+            return healthPoints;
+        }
+
+        public void RestoreState(object state)
+        {
+            healthPoints = (float)state;
+
+        }
+    }
 }
