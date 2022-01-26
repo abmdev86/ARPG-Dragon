@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Playables;
 using com.sluggagames.dragon.Core;
-using com.sluggagames.dragon.Control;
+using com.sluggagames.dragon.Movement;
 
 namespace com.sluggagames.dragon.Cinemamtics
 {

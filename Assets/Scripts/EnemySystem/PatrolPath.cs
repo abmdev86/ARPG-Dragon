@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace com.sluggagames.dragon.Control
+namespace com.sluggagames.dragon.EnemySystem
 {
   public class PatrolPath : MonoBehaviour
   {

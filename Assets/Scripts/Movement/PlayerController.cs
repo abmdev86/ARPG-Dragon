@@ -3,7 +3,7 @@ using UnityEngine;
 using com.sluggagames.dragon.Movement;
 using com.sluggagames.dragon.Combat;
 
-namespace com.sluggagames.dragon.Control
+namespace com.sluggagames.dragon.Movement
 {
   public class PlayerController : MonoBehaviour
   {

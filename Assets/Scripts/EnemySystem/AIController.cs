@@ -6,7 +6,7 @@ using com.sluggagames.dragon.Movement;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace com.sluggagames.dragon.Control
+namespace com.sluggagames.dragon.EnemySystem
 {
   [RequireComponent(typeof(NavMeshAgent))]
   public class AIController : MonoBehaviour

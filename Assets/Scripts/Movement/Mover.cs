@@ -2,10 +2,10 @@
 using com.sluggagames.dragon.Core;
 using UnityEngine;
 using UnityEngine.AI;
-
+using RPG.Saving;
 namespace com.sluggagames.dragon.Movement
 {
-  public class Mover : MonoBehaviour, IAction
+  public class Mover : MonoBehaviour, IAction, ISaveable
   {
     NavMeshAgent navMeshAgent;
     Animator animator;
@@ -86,5 +86,18 @@ namespace com.sluggagames.dragon.Movement
       audioSource.PlayOneShot(footstepFX);
 
     }
-  }
+
+        public object CaptureState()
+        {
+            return new SerializableVector3(transform.position);
+        }
+
+        public void RestoreState(object state)
+        {
+            SerializableVector3 position = (SerializableVector3)state;
+            navMeshAgent.enabled = false;
+            transform.position = position.ToVector();
+            navMeshAgent.enabled = true;
+        }
+    }
 }
